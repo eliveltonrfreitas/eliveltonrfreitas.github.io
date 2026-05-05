@@ -1,3 +1,71 @@
-EM CONSTRUCAO
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Portal</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        header {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 1em;
+        }
+        #hello-world {
+            font-size: 3em;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #00ff00;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { border-color: #00ff00; }
+            51%, 100% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <header>Hacker Portal</header>
+    <div id="hello-world"></div>
+    <footer>&copy; 2026 Elivelton R. Freitas</footer>
 
-<a href="pages/04052026.html"> teste de hyper link</a>
+    <script>
+        const text = "Hello World";
+        let index = 0;
+        const element = document.getElementById('hello-world');
+
+        function typeWriter() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 150);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
